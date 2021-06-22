@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Proyecto_DSWI_SuperLoro.Models.tb_pedido>
+
+<div class="navbar main mt-1">
+    <div class="logo-links">
+        <a href="./home.html">
+            <img src="" alt="Logo superloro">
+        </a>
+        <a class="" href="/manager-home.html">Productos</a>
+        <a class="selected" href="/assistant-home.html">Pedidos</a>
+    </div>
+    <div class="auth-buttons">
+        <a href="./home.html"><button class="button2 btn-log-out">Cerrar sesión</button></a>
+    </div>
+</div>
+<div class="categories-and-pager main">
+    <div class="search-box-and-filter">
+        <div class="search-box">
+            <input type="text" placeholder="Id Pedido">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    <div class="pager">
+        <div class="results">
+            <span>Resultados </span><span>12</span><span> de </span><span>15</span>
+        </div>
+        <div class="pages">
+            <!-- <input type="hidden"
+                name="action" value="anterior">,
+                name="pagactual" value="1">, -->
+            <a href="#"><i class="fas fa-chevron-left"></i></a>
+            <!-- <input type="hidden"
+                name="action" value="irpagina",
+                name="value" value="1",
+                name="pagactual" value="1"> -->
+            <a class="pagina-actual" href="#">1</a>
+            <!-- Borrar inicio -->
+            <!-- <input type="hidden"
+                name="action" value="irpagina",
+                name="pagina" value="2",
+                name="pagactual" value="1"> -->
+            <a href="#">2</a>
+            <!-- <input type="hidden"
+                name="action" value="irpagina",
+                name="pagina" value="2",
+                name="pagactual" value="1"> -->
+            <a href="#">3</a>
+            <!-- Borrar fin -->
+            <!-- <input type="hidden"
+                name="action" value="siguiente">,
+                name="pagactual" value="1"> -->
+            <a href="#"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</div>
+<div class="create-product main">
+    <a class="" href="./create-update-order.html"><i class="fas fa-plus"></i>Registrar pedido</a>
+</div>
+<div class="orders-table main">
+    <div class="headers">
+        <h4>Id</h4>
+        <h4>Id Compra</h4>
+        <h4>Fecha Inicio Producción</h4>
+        <h4>Fecha Fin Producción</h4>
+        <h4>Estado</h4>
+        <h4>Acciones</h4>
+    </div>
+    @foreach (var item in Model)
+    {        
+        <div class="rows rows-1">
+            <p>@Html.DisplayFor(modelItem => item.id_pedido)</p>
+            <p> @Html.DisplayFor(modelItem => item.id_compra)</p>
+            <p>@Html.DisplayFor(modelItem => item.fec_ini)</p>
+            <p>@Html.DisplayFor(modelItem => item.fec_fin)</p>
+            <p>@Html.DisplayFor(modelItem => item.estado)</p>
+            <div class="actions">
+                <a href="#"><i class="fas fa-edit"></i>Edita</a>
+                <span>|</span>
+                <a href="#"><i class="fas fa-trash-alt"></i>Elimina</a>
+            </div>
+        </div>
+    }
+    <!-- Borrar fin -->
+</div>
+<div class="bottom-pager main">
+    <div class="pager">
+        <div class="results">
+            <span>Resultados </span><span>12</span><span> de </span><span>15</span>
+        </div>
+        <div class="pages">
+            <!-- <input type="hidden"
+                name="action" value="anterior">,
+                name="pagactual" value="1">, -->
+            <a href="#"><i class="fas fa-chevron-left"></i></a>
+            <!-- <input type="hidden"
+                name="action" value="irpagina",
+                name="value" value="1",
+                name="pagactual" value="1"> -->
+            <a class="pagina-actual" href="#">1</a>
+            <!-- Borrar inicio -->
+            <!-- <input type="hidden"
+                name="action" value="irpagina",
+                name="pagina" value="2",
+                name="pagactual" value="1"> -->
+            <a href="#">2</a>
+            <!-- <input type="hidden"
+                name="action" value="irpagina",
+                name="pagina" value="2",
+                name="pagactual" value="1"> -->
+            <a href="#">3</a>
+            <!-- Borrar fin -->
+            <!-- <input type="hidden"
+                name="action" value="siguiente">,
+                name="pagactual" value="1"> -->
+            <a href="#"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</div>
+
+
